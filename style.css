@@ -8,7 +8,6 @@ body {
 .overview {
   display: flex;
   height: 100%;
-  background-color: #31353f;
 }
 
 .sidebar {
@@ -23,7 +22,6 @@ body {
 .main {
   flex: 1;
   margin-left: 250px;
-  background-color: #31353f;
   display: flex;
   width: auto;
   overflow-y: auto;
@@ -39,6 +37,8 @@ body {
     margin-left: 0;
   }
 }
+
+
 .main .main-content {
   padding: 0 20px;
   display: flex;
@@ -48,6 +48,7 @@ body {
   overflow: hidden;
 }
 
+/* start sidebar  */
 .navs {
   display: flex;
   flex-direction: column;
@@ -371,17 +372,6 @@ body {
   flex: auto;
 }
 
-.card-with-porftolio{
-  gap: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  position: relative;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-}
-
 .amount {
   position: relative;
   width: 85px;
@@ -434,11 +424,19 @@ body {
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-  /* position: relative; */
-  /* flex: 0 0 auto; */
   margin-bottom: 30px;
 }
 
+
+.card-with-porftolio{
+  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
 
 /* start master card  */
 .master-card {
@@ -655,13 +653,10 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   overflow-x: scroll;
-  /* position: relative; */
-  /* flex: 0 0 auto; */
 }
 
 
 /* start chart  */
-
 .chart {
   position: relative;
   width: 739px;
