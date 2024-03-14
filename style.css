@@ -431,12 +431,22 @@ body {
 .card-with-porftolio{
   gap: 12px;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   flex-direction: column;
-  flex: 0 0 auto;
+  /* flex: 0 0 auto; */
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 900px) {
+  .card-with-porftolio {
+    flex-direction: row;
+  }
+}@media (max-width: 700px) {
+  .card-with-porftolio {
+    flex-direction: column;
+  }
+}
+
 
 /* start master card  */
 .master-card {
