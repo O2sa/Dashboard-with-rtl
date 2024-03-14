@@ -365,12 +365,21 @@ body {
 .div-2 {
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
   align-items: center;
   justify-content: center;
   gap: 12px;
-  /* position: relative; */
+  flex: auto;
+}
+
+.card-with-porftolio{
+  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  position: relative;
   flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .amount {
