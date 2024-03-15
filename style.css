@@ -10,6 +10,16 @@ body {
   height: 100%;
 }
 
+.main .main-content {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  overflow: hidden;
+}
+
+/* start sidebar  */
 .sidebar {
   position: fixed;
   width: 250px;
@@ -17,26 +27,26 @@ body {
   z-index: 99;
   top: 0;
   background-color: var(--background-color2);
-  transition: left 0.3s ease; /* Smooth transition effect */
+  transition: left 0.3s ease;
+  /* overflow-y: scroll; */
 }
 .sidebar:target {
-  left: 0; /* Displayed on screen */
+  left: 0;
 }
 
 .overlay {
-  display: none; /* Initially hidden */
+  display: none;
   position: fixed;
   top: 0;
-align-items: center;
-justify-content: center;
+  align-items: center;
+  justify-content: center;
   left: 0;
   width: 100%;
   z-index: 10;
   height: 100%;
-  background-color: rgba(5, 4, 4, 0.5); /* Semi-transparent overlay */
+  background-color: rgba(5, 4, 4, 0.5);
 }
 
-/* Display the overlay when the sidebar is targeted */
 #sidebar:target + .overlay {
   display: flex;
 }
@@ -52,7 +62,7 @@ justify-content: center;
 .sidebar-toggler {
   display: none;
 }
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .sidebar {
     left: -250px;
   }
@@ -68,16 +78,6 @@ justify-content: center;
   }
 }
 
-.main .main-content {
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 30px;
-  overflow: hidden;
-}
-
-/* start sidebar  */
 .sidebar .navs {
   display: flex;
   flex-direction: column;
@@ -120,17 +120,17 @@ justify-content: center;
 .navs .nav {
   display: flex;
   width: 100%;
+  height: 50px;
+
   width: 197px;
   align-items: center;
   gap: 20px;
-  
   padding: 0px 0px 0px 12px;
+  /* padding-block-start: 12px; */
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .nav:hover {
-  height: 50px;
   background-color: var(--main-100);
   border-radius: 10px;
   color: var(--text-100);
@@ -164,6 +164,8 @@ justify-content: center;
   flex-direction: column;
   gap: 32px;
   margin-bottom: 50px;
+  /* margin-top: 20px; */
+
 }
 
 /* end sidebar  */
@@ -360,7 +362,7 @@ justify-content: center;
   margin-bottom: 30px;
 }
 
- .card-with-porftolio {
+.card-with-porftolio {
   gap: 12px;
   display: flex;
   flex-wrap: wrap;
