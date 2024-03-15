@@ -6,6 +6,7 @@ This the implementation of this figma file:
 1. Fully responsive
 2. RTL support
 3. pixel level implemtation
+4. Vanilla HTML and CSS
 
 
 ## Time spent
