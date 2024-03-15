@@ -13,11 +13,8 @@
 </head>
 
 <body>
-    <div class="overview">
-        <!-- <div class="overlap-wrapper">
-            <div class="overlap">
-                <div class="overlap-group"> -->
-        <div class="sidebar">
+    <div class="dashboard">
+        <div id="sidebar" class="sidebar">
             <div class="navs">
                 <div class="top-menu">
                     <div class="logo">
@@ -26,62 +23,69 @@
                     </div>
                     <div class="top-navs">
                         <div class="nav active">
-                            <img class="img-2" src="img/element-3.png" />
+                            <img class="icon" src="img/element-3.png" />
                             <div class="label">Overview</div>
                         </div>
                         <div class="nav">
-                            <img class="img-2" src="img/setting.png" />
+                            <img class="icon" src="img/setting.png" />
                             <div class="text-wrapper-2">Setting</div>
                         </div>
                         <div class="nav">
-                            <img class="img-2" src="img/setting.png" />
+                            <img class="icon" src="img/setting.png" />
                             <div class="text-wrapper-2">Setting</div>
                         </div>
                         <div class="nav">
-                            <img class="img-2" src="img/setting.png" />
+                            <img class="icon" src="img/setting.png" />
                             <div class="text-wrapper-2">Setting</div>
                         </div>
                         <div class="nav">
-                            <img class="img-2" src="img/setting.png" />
+                            <img class="icon" src="img/setting.png" />
                             <div class="text-wrapper-2">Setting</div>
                         </div>
                     </div>
                 </div>
                 <div class="bottom-navs">
                     <div class="nav">
-                        <img class="img-2" src="img/setting.png" />
+                        <img class="icon" src="img/setting.png" />
                         <div class="text-wrapper-2">Setting</div>
                     </div>
                     <a href="index-rtl.html">
                         <div class="nav">
-                            <img class="img-2" src="img/setting.png" />
+                            <img class="icon" src="img/setting.png" />
                             <div class="text-wrapper-2">RTL</div>
                         </div>
                     </a>
 
                     <div class="nav">
-                        <img class="img-2" src="img/setting.png" />
+                        <img class="icon" src="img/setting.png" />
                         <div class="text-wrapper-2">Logout</div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <a href="#" class="overlay">
+            <span style="font-size: large; color: beige;">
+                click to close
+            </span>
+        </a>
         <div class="main">
             <header class="header">
-                <div class="text-wrapper-3">Dashboard</div>
+                <div class="text-wrapper-3 header-title">Dashboard</div>
+                <a href="#sidebar" class="sidebar-toggler">
+                    <div class="icon-wrapper">
+                        <img class="icon" src="img/Logo.png" />
+                    </div>
+                </a>
                 <div class="search-bar">
                     <img class="icon-search-normal" src="img/search-normal.png" />
                     <div class="text-wrapper-4">Search...</div>
                     <!-- <input type="text" name="search" id="search"> -->
                 </div>
                 <div class="user-setting">
-                    <div class="notifcations-icon">
+                    <div class="notifcations">
                         <div class="icon">
-                            <div class="icon-notification">
-                                <img src="img/Icon.png" alt="">
+                            <img src="img/Icon.png" alt="">
 
-                            </div>
                         </div>
                     </div>
                     <div class="profile">
@@ -93,125 +97,118 @@
             </header>
 
 
-            <!-- </div> -->
 
             <div class="main-content">
 
                 <div class="cards">
                     <div class="coin-card">
                         <div class="head">
-                            <div class="logo-2">
-                                <div class="icon-bitcoin-btc-wrapper">
-                                    <img class="icon-bitcoin-btc" src="img/bitcoin.png" />
+                            <div class="card-logo">
+                                <div class="icon-wrapper">
+                                    <img class="icon" src="img/bitcoin.png" />
                                 </div>
                                 <div class="title">
                                     <div class="main-title">Bitcoin</div>
                                     <div class="subtitle">BTC</div>
                                 </div>
                             </div>
-                            <img class="img-3" src="img/arrow-up.png" />
+                            <img class="small-icon" src="img/arrow-up.png" />
                         </div>
                         <div class="bottom">
-                            <div class="div-2">
+                            <div class="text">
                                 <div class="amount">$52,291</div>
                                 <div class="text-wrapper-5">+0.25%</div>
                             </div>
                             <div class="graph">
-                                <div class="overlap-group-2">
-                                    <div class="ellipse-2"></div>
-                                    <img class="vector" src="img/graph.png" />
-                                </div>
+                                <div class="ellipse"></div>
+                                <img class="vector" src="img/graph.png" />
                             </div>
                         </div>
                     </div>
                     <div class="coin-card">
                         <div class="head">
-                            <div class="logo-2">
-                                <div class="icon-bitcoin-btc-wrapper">
-                                    <img class="icon-bitcoin-btc" src="img/bitcoin.png" />
+                            <div class="card-logo">
+                                <div class="icon-wrapper">
+                                    <img class="icon" src="img/bitcoin.png" />
                                 </div>
                                 <div class="title">
                                     <div class="main-title">Bitcoin</div>
                                     <div class="subtitle">BTC</div>
                                 </div>
                             </div>
-                            <img class="img-3" src="img/arrow-up.png" />
+                            <img class="small-icon" src="img/arrow-up.png" />
                         </div>
                         <div class="bottom">
-                            <div class="div-2">
+                            <div class="text">
                                 <div class="amount">$52,291</div>
                                 <div class="text-wrapper-5">+0.25%</div>
                             </div>
                             <div class="graph">
-                                <div class="overlap-group-2">
-                                    <div class="ellipse-2"></div>
-                                    <img class="vector" src="img/graph.png" />
-                                </div>
+                                <div class="ellipse"></div>
+                                <img class="vector" src="img/graph.png" />
                             </div>
                         </div>
                     </div>
                     <div class="coin-card">
                         <div class="head">
-                            <div class="logo-2">
-                                <div class="icon-bitcoin-btc-wrapper">
-                                    <img class="icon-bitcoin-btc" src="img/bitcoin.png" />
+                            <div class="card-logo">
+                                <div class="icon-wrapper">
+                                    <img class="icon" src="img/bitcoin.png" />
                                 </div>
                                 <div class="title">
                                     <div class="main-title">Bitcoin</div>
                                     <div class="subtitle">BTC</div>
                                 </div>
                             </div>
-                            <img class="img-3" src="img/arrow-up.png" />
+                            <img class="small-icon" src="img/arrow-up.png" />
                         </div>
                         <div class="bottom">
-                            <div class="div-2">
+                            <div class="text">
                                 <div class="amount">$52,291</div>
                                 <div class="text-wrapper-5">+0.25%</div>
                             </div>
                             <div class="graph">
-                                <div class="overlap-group-2">
-                                    <div class="ellipse-2"></div>
-                                    <img class="vector" src="img/graph.png" />
-                                </div>
+                                <div class="ellipse"></div>
+                                <img class="vector" src="img/graph.png" />
                             </div>
                         </div>
                     </div>
                     <div class="coin-card">
                         <div class="head">
-                            <div class="logo-2">
-                                <div class="icon-bitcoin-btc-wrapper">
-                                    <img class="icon-bitcoin-btc" src="img/bitcoin.png" />
+                            <div class="card-logo">
+                                <div class="icon-wrapper">
+                                    <img class="icon" src="img/bitcoin.png" />
                                 </div>
                                 <div class="title">
                                     <div class="main-title">Bitcoin</div>
                                     <div class="subtitle">BTC</div>
                                 </div>
                             </div>
-                            <img class="img-3" src="img/arrow-up.png" />
+                            <img class="small-icon" src="img/arrow-up.png" />
                         </div>
                         <div class="bottom">
-                            <div class="div-2">
+                            <div class="text">
                                 <div class="amount">$52,291</div>
                                 <div class="text-wrapper-5">+0.25%</div>
                             </div>
                             <div class="graph">
-                                <div class="overlap-group-2">
-                                    <div class="ellipse-2"></div>
-                                    <img class="vector" src="img/graph.png" />
-                                </div>
+                                <div class="ellipse"></div>
+                                <img class="vector" src="img/graph.png" />
                             </div>
                         </div>
                     </div>
+
 
                 </div>
 
                 <div class="bottom-content">
                     <div class="card-with-porftolio">
+
                         <div class="master-card">
-                            <div class="head-2">
+                            <div class="head">
                                 <div class="text-wrapper-6">Credit Card</div>
                                 <div class="chip">
-                                    <div class="overlap-group-3">
+                                    <div class="credit-icon">
                                         <div class="rectangle"></div>
                                         <div class="group">
                                             <img class="line" src="img/line-1.svg" /> <img class="line-2"
@@ -225,20 +222,21 @@
                                 </div>
                             </div>
                             <div class="middle">
-                                <div class="amount-2">3475 7381 3759 4512</div>
+                                <div class="amount">3475 7381 3759 4512</div>
                             </div>
-                            <div class="bottom-2">
+                            <div class="bottom">
                                 <div class="darrell-steward">DARRELL STEWARD</div>
                                 <div class="text-wrapper-7">VIZA</div>
                             </div>
                         </div>
+
                         <div class="my-portfolio">
-                            <div class="title-2">My Portfolio</div>
+                            <div class="title">My Portfolio</div>
                             <div class="rows">
                                 <div class="row">
-                                    <div class="logo-2">
-                                        <div class="icon-bitcoin-btc-wrapper">
-                                            <img class="icon-bitcoin-btc" src="img/bitcoin.png" />
+                                    <div class="card-logo">
+                                        <div class="icon-wrapper">
+                                            <img class="icon" src="img/bitcoin.png" />
                                         </div>
                                         <div class="title">
                                             <div class="main-title">Bitcoin</div>
@@ -251,9 +249,9 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="logo-2">
-                                        <div class="icon-bitcoin-btc-wrapper">
-                                            <img class="icon-bitcoin-btc" src="img/bitcoin.png" />
+                                    <div class="card-logo">
+                                        <div class="icon-wrapper">
+                                            <img class="icon" src="img/bitcoin.png" />
                                         </div>
                                         <div class="title">
                                             <div class="main-title">Bitcoin</div>
@@ -266,9 +264,9 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="logo-2">
-                                        <div class="icon-bitcoin-btc-wrapper">
-                                            <img class="icon-bitcoin-btc" src="img/bitcoin.png" />
+                                    <div class="card-logo">
+                                        <div class="icon-wrapper">
+                                            <img class="icon" src="img/bitcoin.png" />
                                         </div>
                                         <div class="title">
                                             <div class="main-title">Bitcoin</div>
@@ -281,9 +279,9 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="logo-2">
-                                        <div class="icon-bitcoin-btc-wrapper">
-                                            <img class="icon-bitcoin-btc" src="img/bitcoin.png" />
+                                    <div class="card-logo">
+                                        <div class="icon-wrapper">
+                                            <img class="icon" src="img/bitcoin.png" />
                                         </div>
                                         <div class="title">
                                             <div class="main-title">Bitcoin</div>
@@ -296,9 +294,9 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="logo-2">
-                                        <div class="icon-bitcoin-btc-wrapper">
-                                            <img class="icon-bitcoin-btc" src="img/bitcoin.png" />
+                                    <div class="card-logo">
+                                        <div class="icon-wrapper">
+                                            <img class="icon" src="img/bitcoin.png" />
                                         </div>
                                         <div class="title">
                                             <div class="main-title">Bitcoin</div>
@@ -311,12 +309,15 @@
                                     </div>
                                 </div>
 
+
                             </div>
                         </div>
+
                     </div>
                     <div class="chart-with-market">
+
                         <div class="chart">
-                            <div class="overlap-group-4">
+                            <div class="overlap">
                                 <div class="chart-2">
                                     <div class="vertical">
                                         <div class="amount-3">
@@ -338,8 +339,6 @@
                                     </div>
                                 </div>
                                 <div class="bars-with-line">
-
-
                                     <img class="" src="img/Bars.png" />
                                 </div>
                             </div>
@@ -347,7 +346,7 @@
                                 <div class="note">
                                     <div class="div-3">
                                         <div class="text-wrapper-9">Bitcoin/BTC</div>
-                                        <img class="img-3" src="img/arrow-down.png" />
+                                        <img class="small-icon" src="img/arrow-down.png" />
                                     </div>
                                     <div class="text-wrapper-10">$35,352.02</div>
                                 </div>
@@ -374,13 +373,14 @@
                                 <div class="icons">
                                     <img class="button" src="img/candle.png" />
                                     <button class="button-2">
-                                        <img class="img-3" src="img/dollar-circle.png" />
+                                        <img class="small-icon" src="img/dollar-circle.png" />
                                         <div class="text-wrapper-13">USD</div>
-                                        <img class="img-3" src="img/arrow-down.png" />
+                                        <img class="small-icon" src="img/arrow-down.png" />
                                     </button>
                                 </div>
                             </div>
                         </div>
+
                         <div class="live-market">
                             <div class="frame">
                                 <div class="heading">Live Market</div>
@@ -393,7 +393,7 @@
                                     <div class="coin">
                                         <div class="text-4">Coin</div>
                                         <div class="div-3">
-                                            <img class="icon-bitcoin-btc-2" src="img/bitcoin.png" />
+                                            <img class="icon" src="img/bitcoin.png" />
                                             <div class="date">Bitcoin</div>
                                         </div>
                                     </div>
@@ -417,15 +417,12 @@
                                 <img class="img-2" src="img/more.png" />
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-    </div>
-    </div>
     </div>
 </body>
 
