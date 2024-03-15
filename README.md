@@ -11,6 +11,7 @@ This the implementation of this figma file:
 
 ## Time spent
 - 5 hours
+- 3 Hours: Improvements 
 
 ## Demo
 [demo](https://o2sa.github.io/Dashboard-with-rtl/)
