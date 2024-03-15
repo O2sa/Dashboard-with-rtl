@@ -3,10 +3,10 @@ This the implementation of this figma file:
 
 
 ## Features 
-1. Fully responsive
-2. RTL support
-3. pixel level implemtation
-4. Vanilla HTML and CSS
+1. **Fully responsive**
+2. **RTL support**
+3. **pixel level implemtation**
+4. **Vanilla HTML and CSS**
 
 
 ## Time spent
@@ -19,8 +19,3 @@ This the implementation of this figma file:
 
 To implement the design from the Figma file you provided:
 
-1. **Fully Responsive**
-
-2. **RTL Support**
-
-3. **Pixel-Level Implementation**
