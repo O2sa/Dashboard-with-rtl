@@ -19,10 +19,11 @@
             margin-left: 0;
             margin-right: 250px;
         }
-        .nav{
-                padding: 0px 12px 0px 0px !important;
 
-            }
+        .nav {
+            padding: 0px 12px 0px 0px !important;
+
+        }
 
         @media (max-width: 1200px) {
             .sidebar {
@@ -39,6 +40,11 @@
                 /* Displayed on screen */
             }
 
+        }
+
+        .search-bar .icon {
+            right: 450px;
+            left: 0;
         }
     </style>
 </head>
@@ -108,9 +114,8 @@
                     </div>
                 </a>
                 <div class="search-bar">
-                    <img class="icon-search-normal" src="img/search-normal.png" />
-                    <div class="text-wrapper-4">Search...</div>
-                    <!-- <input type="text" name="search" id="search"> -->
+                    <img class="icon" src="img/search-normal.png" />
+                    <input type="text" class="text-input" placeholder="Search..">
                 </div>
                 <div class="user-setting">
                     <div class="notifcations">
