@@ -1,0 +1,87 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 30px 30px;
+  position: relative;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+/* statrt conin-card */
+.cards .coin-card {
+  padding: 23px 18px;
+  background-color: var(--background-color2);
+  border-radius: 15px;
+  box-shadow: 4px 4px 33px #0000000d;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.coin-card .head {
+  display: inline-flex;
+  align-items: center;
+  gap: 84px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.coin-card .bottom {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.coin-card .bottom .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex: auto;
+}
+
+.coin-card .amount {
+  position: relative;
+  width: 85px;
+  margin-top: -1px;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-weight: 600;
+  color: var(--text-100);
+  font-size: 21px;
+  letter-spacing: 0.42px;
+  line-height: normal;
+}
+
+.coin-card .bottom .graph {
+  position: relative;
+  width: 111px;
+  height: 46.5px;
+}
+
+.coin-card .graph .ellipse {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 14px;
+  left: 102px;
+  background-color: var(--main-100);
+  border-radius: 5px;
+  filter: blur(5px);
+}
+
+.coin-card .graph .vector {
+  position: absolute;
+  width: 109px;
+  height: 50px;
+  top: 0;
+  left: 0;
+}
+/* end coin-card  */
