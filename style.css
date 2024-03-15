@@ -5,7 +5,7 @@ body {
   background-color: #31353f;
 }
 
-.overview {
+.dashboard {
   display: flex;
   height: 100%;
 }
@@ -17,6 +17,28 @@ body {
   z-index: 99;
   top: 0;
   background-color: var(--background-color2);
+  transition: left 0.3s ease; /* Smooth transition effect */
+}
+.sidebar:target {
+  left: 0; /* Displayed on screen */
+}
+
+.overlay {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+align-items: center;
+justify-content: center;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 100%;
+  background-color: rgba(5, 4, 4, 0.5); /* Semi-transparent overlay */
+}
+
+/* Display the overlay when the sidebar is targeted */
+#sidebar:target + .overlay {
+  display: flex;
 }
 
 .main {
@@ -27,17 +49,24 @@ body {
   overflow-y: auto;
   flex-direction: column;
 }
-
+.sidebar-toggler {
+  display: none;
+}
 @media (max-width: 900px) {
   .sidebar {
+    left: -250px;
+  }
+  .header-title {
     display: none;
   }
   .main {
     width: 100%;
     margin-left: 0;
   }
+  .sidebar-toggler {
+    display: block;
+  }
 }
-
 
 .main .main-content {
   padding: 0 20px;
@@ -49,7 +78,7 @@ body {
 }
 
 /* start sidebar  */
-.navs {
+.sidebar .navs {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +88,7 @@ body {
   margin: 20px 0;
 }
 
-.top-menu {
+.navs .top-menu {
   display: flex;
   flex-direction: column;
   height: 410px;
@@ -67,7 +96,7 @@ body {
   justify-content: space-between;
 }
 
-.logo {
+.navs .top-menu .logo {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -75,8 +104,7 @@ body {
   flex: 0 0 auto;
 }
 
-.img {
-  position: relative;
+.navs .logo img {
   width: 36px;
   height: 20px;
 }
@@ -89,13 +117,24 @@ body {
   justify-content: space-between;
 }
 
-.nav {
+.navs .nav {
   display: flex;
   width: 100%;
   width: 197px;
   align-items: center;
   gap: 20px;
+  
   padding: 0px 0px 0px 12px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.nav:hover {
+  height: 50px;
+  background-color: var(--main-100);
+  border-radius: 10px;
+  color: var(--text-100);
+  box-shadow: 4px 4px 32px #6659ff12;
 }
 
 .nav.active {
@@ -115,30 +154,19 @@ body {
   line-height: normal;
 }
 
-.img-2 {
+.nav .icon {
   width: 24px;
   height: 24px;
 }
 
-.bottom-navs {
+.navs .bottom-navs {
   display: flex;
   flex-direction: column;
   gap: 32px;
   margin-bottom: 50px;
 }
 
-.nav-2 {
-  display: flex;
-  width: 166px;
-  align-items: center;
-  gap: 20px;
-  padding: 0px 0px 8px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
 /* end sidebar  */
-
 
 /* Start header */
 .header {
@@ -149,7 +177,7 @@ body {
   background-color: transparent;
 }
 
-.search-bar {
+.header .search-bar {
   position: relative;
   width: 450px;
   height: 44px;
@@ -158,17 +186,16 @@ body {
 }
 
 @media (max-width: 1200px) {
-  .search-bar {
+  .header .search-bar {
     display: none;
   }
 }
 
-
-.search-bar input {
+.header .search-bar input {
   background-color: inherit;
 }
 
-.icon-search-normal {
+.search-bar .icon-search-normal {
   position: absolute;
   width: 24px;
   height: 24px;
@@ -176,7 +203,7 @@ body {
   left: 406px;
 }
 
-.user-setting {
+.header .user-setting {
   display: inline-flex;
   align-items: flex-start;
   gap: 30px;
@@ -184,29 +211,22 @@ body {
   flex: 0 0 auto;
 }
 
-.notifcations-icon {
+.user-setting .notifcations {
   width: 44px;
   height: 44px;
   background-color: var(--background-color2);
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 600px) {
-  .notifcations-icon {
+  .user-setting .notifcations {
     display: none;
   }
 }
-
-.icon {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 24px;
-  position: relative;
-  top: 10px;
-  left: 10px;
-}
-
-.icon-notification {
+.notifcations .icon {
   position: relative;
   width: 24px;
   height: 24px;
@@ -214,19 +234,7 @@ body {
   background-size: 100% 100%;
 }
 
-.ellipse {
-  position: relative;
-  width: 6px;
-  height: 6px;
-  top: 2px;
-  left: 14px;
-  background-color: var(--sec-100);
-  border-radius: 3px;
-  border: 1px solid;
-  border-color: var(--text-100);
-}
-
-.profile {
+.user-setting .profile {
   display: inline-flex;
   align-items: center;
   gap: 15px;
@@ -234,7 +242,7 @@ body {
   flex: 0 0 auto;
 }
 
-.photo {
+.profile .photo {
   position: relative;
   width: 44px;
   height: 44px;
@@ -242,7 +250,7 @@ body {
   border-radius: 10px;
 }
 
-.name {
+.profile .name {
   font-size: 14px;
   letter-spacing: 0;
   position: relative;
@@ -255,9 +263,6 @@ body {
 
 /* end header  */
 
-
-
-
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -269,9 +274,8 @@ body {
   justify-content: center;
 }
 
-
 /* statrt conin-card */
-.coin-card {
+.cards .coin-card {
   padding: 23px 18px;
   background-color: var(--background-color2);
   border-radius: 15px;
@@ -284,7 +288,7 @@ body {
   flex: 0 0 auto;
 }
 
-.head {
+.coin-card .head {
   display: inline-flex;
   align-items: center;
   gap: 84px;
@@ -292,70 +296,7 @@ body {
   flex: 0 0 auto;
 }
 
-.logo-2 {
-  display: flex;
-  width: 119px;
-  align-items: flex-start;
-  justify-content: space-between;
-  position: relative;
-}
-
-.icon-bitcoin-btc-wrapper {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  background-color: var(--background-color1);
-  border-radius: 10px;
-}
-
-.icon-bitcoin-btc {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 10px;
-  left: 10px;
-}
-
-.title {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.main-title {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins-SemiBold", Helvetica;
-  font-weight: 600;
-  color: var(--text-100);
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.subtitle {
-  position: relative;
-  width: fit-content;
-  opacity: 0.6;
-  font-family: "Poppins-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--text-100);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.img-3 {
-  position: relative;
-  width: 18px;
-  height: 18px;
-}
-
-.bottom {
+.coin-card .bottom {
   display: inline-flex;
   align-items: center;
   gap: 25px;
@@ -363,7 +304,7 @@ body {
   flex: 0 0 auto;
 }
 
-.div-2 {
+.coin-card .bottom .text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -372,7 +313,7 @@ body {
   flex: auto;
 }
 
-.amount {
+.coin-card .amount {
   position: relative;
   width: 85px;
   margin-top: -1px;
@@ -384,21 +325,13 @@ body {
   line-height: normal;
 }
 
-.graph {
+.coin-card .bottom .graph {
   position: relative;
   width: 111px;
   height: 46.5px;
 }
 
-.overlap-group-2 {
-  position: relative;
-  width: 112px;
-  height: 50px;
-  top: -2px;
-  left: -1px;
-}
-
-.ellipse-2 {
+.coin-card .graph .ellipse {
   position: absolute;
   width: 10px;
   height: 10px;
@@ -409,7 +342,7 @@ body {
   filter: blur(5px);
 }
 
-.vector {
+.coin-card .graph .vector {
   position: absolute;
   width: 109px;
   height: 50px;
@@ -418,7 +351,7 @@ body {
 }
 /* end coin-card  */
 
-.bottom-content {
+.main .main-content .bottom-content {
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -427,29 +360,22 @@ body {
   margin-bottom: 30px;
 }
 
-
-.card-with-porftolio{
+ .card-with-porftolio {
   gap: 12px;
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   flex-direction: column;
-  /* flex: 0 0 auto; */
+  /* overflow: scroll; */
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 900px) {
+@media (max-width: 1400px) {
   .card-with-porftolio {
     flex-direction: row;
   }
-}@media (max-width: 700px) {
-  .card-with-porftolio {
-    flex-direction: column;
-  }
 }
-
-
 /* start master card  */
-.master-card {
+.card-with-porftolio .master-card {
   display: flex;
   flex-direction: column;
   width: 355px;
@@ -458,12 +384,12 @@ body {
   justify-content: center;
   gap: 30px;
   padding: 12px;
-  position: relative;
+  /* position: relative; */
   background-color: #396ef7;
   border-radius: 15px;
 }
 
-.head-2 {
+.master-card .head {
   display: flex;
   width: 315px;
   align-items: flex-start;
@@ -473,13 +399,13 @@ body {
   flex: 0 0 auto;
 }
 
-.chip {
+.master-card .head .chip {
   position: relative;
   width: 37px;
   height: 24px;
 }
 
-.overlap-group-3 {
+.head .chip .credit-icon {
   position: relative;
   width: 39px;
   height: 26px;
@@ -496,7 +422,7 @@ body {
   );
 }
 
-.rectangle {
+.credit-icon .rectangle {
   position: absolute;
   width: 26px;
   height: 17px;
@@ -508,7 +434,7 @@ body {
   transform: rotate(90deg);
 }
 
-.group {
+.credit-icon .group {
   left: 27px;
   position: absolute;
   width: 11px;
@@ -516,7 +442,7 @@ body {
   top: 8px;
 }
 
-.line {
+.credit-icon .line {
   position: absolute;
   width: 11px;
   height: 1px;
@@ -524,7 +450,7 @@ body {
   left: 0;
 }
 
-.line-2 {
+.credit-icon .line-2 {
   position: absolute;
   width: 11px;
   height: 1px;
@@ -532,7 +458,7 @@ body {
   left: 0;
 }
 
-.group-2 {
+.credit-icon .group-2 {
   left: 0;
   position: absolute;
   width: 11px;
@@ -540,7 +466,7 @@ body {
   top: 8px;
 }
 
-.middle {
+.master-card .middle {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -550,7 +476,7 @@ body {
   flex: 0 0 auto;
 }
 
-.amount-2 {
+.master-card .middle .amount {
   position: relative;
   width: fit-content;
   margin-top: -1px;
@@ -562,7 +488,7 @@ body {
   line-height: normal;
 }
 
-.bottom-2 {
+.master-card .bottom {
   display: flex;
   width: 315px;
   align-items: center;
@@ -572,7 +498,7 @@ body {
   flex: 0 0 auto;
 }
 
-.darrell-steward {
+.master-card .bottom .darrell-steward {
   opacity: 0.6;
   font-size: 12px;
   letter-spacing: 1.2px;
@@ -586,8 +512,8 @@ body {
 
 /* end master card  */
 
-
 /* start .my-portfolio  */
+/* .card-with-porftolio */
 .my-portfolio {
   position: relative;
   width: 360px;
@@ -597,7 +523,7 @@ body {
   box-shadow: 4px 4px 33px #0000000d;
 }
 
-.title-2 {
+.my-portfolio > .title {
   position: absolute;
   top: 29px;
   left: 30px;
@@ -609,7 +535,7 @@ body {
   line-height: normal;
 }
 
-.rows {
+.my-portfolio .rows {
   flex-direction: column;
   gap: 24px;
   padding: 8px;
@@ -620,7 +546,7 @@ body {
   align-items: flex-start;
 }
 
-.row {
+.my-portfolio .rows .row {
   gap: 96px;
   position: relative;
   flex: 0 0 auto;
@@ -628,7 +554,7 @@ body {
   align-items: flex-start;
 }
 
-.text {
+.rows .row > .text {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-end;
@@ -637,9 +563,7 @@ body {
   flex: 0 0 auto;
 }
 
-
-
-.text-2 {
+.rows .row > .text .text-2 {
   position: relative;
   width: 84px;
   height: 15px;
@@ -654,8 +578,6 @@ body {
 }
 /* end my .profile */
 
-
-
 .chart-with-market {
   display: inline-flex;
   flex-direction: column;
@@ -665,9 +587,8 @@ body {
   overflow-x: scroll;
 }
 
-
 /* start chart  */
-.chart {
+.chart-with-market .chart {
   position: relative;
   width: 739px;
   height: 441px;
@@ -676,7 +597,7 @@ body {
   box-shadow: 4px 4px 33px #0000000d;
 }
 
-.overlap-group-4 {
+.chart .overlap {
   position: absolute;
   width: 686px;
   height: 251px;
@@ -684,7 +605,7 @@ body {
   left: 30px;
 }
 
-.chart-2 {
+.overlap .chart-2 {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-end;
@@ -694,7 +615,7 @@ body {
   left: 0;
 }
 
-.vertical {
+.chart-2 .vertical {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -702,7 +623,7 @@ body {
   flex: 0 0 auto;
 }
 
-.amount-3 {
+.chart-2 .vertical .amount-3 {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -711,7 +632,7 @@ body {
   flex: 0 0 auto;
 }
 
-.amount-4 {
+.vertical .amount-3 .amount-4 {
   position: relative;
   width: 46px;
   margin-top: -1px;
@@ -723,7 +644,7 @@ body {
   line-height: normal;
 }
 
-.amount-5 {
+.vertical .amount-3 .amount-5 {
   position: relative;
   width: 46px;
   font-family: "Poppins-Regular", Helvetica;
@@ -734,14 +655,14 @@ body {
   line-height: normal;
 }
 
-.graphs {
+.chart-2 .vertical .graphs {
   position: relative;
   width: 625px;
   height: 203.41px;
   margin-right: -1px;
 }
 
-.months {
+.overlap .chart-2 .months {
   display: flex;
   width: 628px;
   align-items: center;
@@ -751,7 +672,7 @@ body {
   flex: 0 0 auto;
 }
 
-.text-3 {
+.chart-2 .months .text-3 {
   position: relative;
   width: fit-content;
   margin-top: -1px;
@@ -764,7 +685,7 @@ body {
   white-space: nowrap;
 }
 
-.bars-with-line {
+.chart .overlap .bars-with-line {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -774,14 +695,7 @@ body {
   left: 58px;
 }
 
-.line-3 {
-  position: relative;
-  width: 628px;
-  height: 1px;
-  object-fit: cover;
-}
-
-.row-2 {
+.chart .row-2 {
   display: inline-flex;
   align-items: center;
   gap: 326px;
@@ -790,7 +704,7 @@ body {
   left: 30px;
 }
 
-.note {
+.row-2 .note {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -799,16 +713,7 @@ body {
   flex: 0 0 auto;
 }
 
-.div-3 {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-
-.pagination {
+.row-2 .pagination {
   display: flex;
   width: 250px;
   align-items: flex-start;
@@ -816,7 +721,7 @@ body {
   position: relative;
 }
 
-.panigation {
+.panigation .panigation {
   background-color: var(--mainlinear);
   display: inline-flex;
   align-items: center;
@@ -828,9 +733,7 @@ body {
   border-radius: 15px;
 }
 
-
-
-.div-wrapper {
+.pagination .div-wrapper {
   border: 1px solid;
   border-color: var(--background-color1);
   display: inline-flex;
@@ -843,8 +746,7 @@ body {
   border-radius: 15px;
 }
 
-
-.title-3 {
+.chart-with-market .chart .title-3 {
   display: flex;
   width: 675px;
   align-items: flex-start;
@@ -854,6 +756,7 @@ body {
   left: 30px;
 }
 
+/* .chart .title-3  */
 .heading {
   position: relative;
   width: fit-content;
@@ -866,7 +769,7 @@ body {
   line-height: normal;
 }
 
-.icons {
+.chart .title-3 .icons {
   display: inline-flex;
   align-items: flex-start;
   gap: 15px;
@@ -874,12 +777,12 @@ body {
   flex: 0 0 auto;
 }
 
-.button {
+.title-3 .icons .button {
   position: relative;
   flex: 0 0 auto;
 }
 
-.button-2 {
+.title-3 .icons .button-2 {
   all: unset;
   box-sizing: border-box;
   display: inline-flex;
@@ -904,7 +807,7 @@ body {
   border-radius: 15px;
 }
 
-.frame {
+.live-market .frame {
   display: flex;
   width: 684px;
   align-items: flex-start;
@@ -914,7 +817,7 @@ body {
   left: 30px;
 }
 
-.button-3 {
+.frame .button-3 {
   all: unset;
   box-sizing: border-box;
   display: inline-flex;
@@ -929,7 +832,7 @@ body {
   flex: 0 0 auto;
 }
 
-.full-table {
+.live-market .full-table {
   display: inline-flex;
   align-items: flex-end;
   gap: 134px;
@@ -938,7 +841,7 @@ body {
   left: 30px;
 }
 
-.table {
+.full-table .table {
   display: inline-flex;
   align-items: flex-start;
   gap: 25px;
@@ -946,7 +849,7 @@ body {
   flex: 0 0 auto;
 }
 
-.coin {
+.full-table .table .coin {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -955,7 +858,7 @@ body {
   flex: 0 0 auto;
 }
 
-.text-4 {
+.table .coin .text-4 {
   position: relative;
   width: 58px;
   margin-top: -1px;
@@ -967,13 +870,13 @@ body {
   line-height: normal;
 }
 
-.icon-bitcoin-btc-2 {
+.coin .div-3 .icon {
   position: relative;
   width: 32px;
   height: 32px;
 }
 
-.date {
+.coin .div-3 .date {
   width: 104px;
   color: var(--text-100);
   letter-spacing: 0.28px;
@@ -984,8 +887,7 @@ body {
   font-weight: 500;
   font-size: 14px;
 }
-
-.data {
+.table .data {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -994,7 +896,7 @@ body {
   flex: 0 0 auto;
 }
 
-.text-5 {
+.table .data .text-5 {
   position: relative;
   width: 70px;
   margin-top: -1px;
@@ -1006,7 +908,7 @@ body {
   line-height: normal;
 }
 
-.date-2 {
+.table .data .date-2 {
   width: fit-content;
   color: var(--secondary-100);
   letter-spacing: 0;
@@ -1021,10 +923,7 @@ body {
 
 /* end .live-market */
 
-
-
-
-/* text styling */
+/* global styling */
 .text-wrapper {
   width: fit-content;
   margin-top: -1px;
@@ -1047,8 +946,6 @@ body {
   line-height: normal;
 }
 
-
-
 .text-wrapper-3 {
   width: fit-content;
   margin-top: -1px;
@@ -1059,7 +956,6 @@ body {
   letter-spacing: 0;
   line-height: normal;
 }
-
 
 .text-wrapper-4 {
   position: absolute;
@@ -1072,7 +968,6 @@ body {
   letter-spacing: 0;
   line-height: normal;
 }
-
 
 .text-wrapper-5 {
   width: fit-content;
@@ -1110,8 +1005,6 @@ body {
   letter-spacing: 0.6px;
   line-height: normal;
 }
-
-
 
 .text-wrapper-8 {
   width: fit-content;
@@ -1188,4 +1081,76 @@ body {
   font-weight: 600;
   color: var(--stroke);
   letter-spacing: 0;
+}
+
+.card-logo {
+  display: flex;
+  width: 119px;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+}
+
+.card-logo .icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 10px;
+  left: 10px;
+}
+
+.icon-wrapper {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background-color: var(--background-color1);
+  border-radius: 10px;
+}
+
+.card-logo .title {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.card-logo .title .main-title {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-weight: 600;
+  color: var(--text-100);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.card-logo .title .subtitle {
+  position: relative;
+  width: fit-content;
+  opacity: 0.6;
+  font-family: "Poppins-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--text-100);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.small-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+/* .row-2 .note */
+.div-3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 auto;
 }
