@@ -1,0 +1,210 @@
+/* start chart  */
+.chart-with-market .chart {
+  position: relative;
+  width: 739px;
+  height: 441px;
+  background-color: var(--background-color2);
+  border-radius: 15px;
+  box-shadow: 4px 4px 33px #0000000d;
+}
+
+.chart .overlap {
+  position: absolute;
+  width: 686px;
+  height: 251px;
+  top: 162px;
+  left: 30px;
+}
+
+.overlap .chart-2 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 13px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.chart-2 .vertical {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.chart-2 .vertical .amount-3 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 33px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.vertical .amount-3 .amount-4 {
+  position: relative;
+  width: 46px;
+  margin-top: -1px;
+  font-family: "Poppins-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--text-10);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.vertical .amount-3 .amount-5 {
+  position: relative;
+  width: 46px;
+  font-family: "Poppins-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--text-10);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chart-2 .vertical .graphs {
+  position: relative;
+  width: 625px;
+  height: 203.41px;
+  margin-right: -1px;
+}
+
+.overlap .chart-2 .months {
+  display: flex;
+  width: 628px;
+  align-items: center;
+  justify-content: center;
+  gap: 88px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.chart-2 .months .text-3 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--text-10);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.chart .overlap .bars-with-line {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  position: absolute;
+  top: 181px;
+  left: 58px;
+}
+
+.chart .row-2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 326px;
+  position: absolute;
+  top: 86px;
+  left: 30px;
+}
+
+.row-2 .note {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.row-2 .pagination {
+  display: flex;
+  width: 250px;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+}
+
+.panigation .panigation {
+  background-color: var(--mainlinear);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 0px 15px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 15px;
+}
+
+.pagination .div-wrapper {
+  border: 1px solid;
+  border-color: var(--background-color1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 0px 15px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 15px;
+}
+
+.chart-with-market .chart .title-3 {
+  display: flex;
+  width: 675px;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+/* .chart .title-3  */
+.heading {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-weight: 600;
+  color: var(--text-100);
+  font-size: 21px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chart .title-3 .icons {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 15px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.title-3 .icons .button {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.title-3 .icons .button-2 {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: var(--background-color1);
+  position: relative;
+  flex: 0 0 auto;
+}
+/* end chart  */
