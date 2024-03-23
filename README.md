@@ -17,5 +17,4 @@ This the implementation of this figma file:
 [demo](https://o2sa.github.io/Dashboard-with-rtl/)
 
 
-To implement the design from the Figma file you provided:
 
