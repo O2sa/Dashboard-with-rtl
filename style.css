@@ -1,3 +1,11 @@
+/* import sections style */
+@import url("./css/sidebar.css");
+@import url("./css/header.css");
+@import url("./css/portfolio.css");
+@import url("./css/market.css");
+@import url("./css/coin-card.css");
+@import url("./css/chart.css");
+
 body {
   margin: 0;
   padding: 0;
@@ -9,48 +17,6 @@ body {
   display: flex;
   height: 100%;
 }
-
-.main .main-content {
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 30px;
-  overflow: hidden;
-}
-
-/* start sidebar  */
-.sidebar {
-  position: fixed;
-  width: 250px;
-  height: 100vh;
-  z-index: 99;
-  top: 0;
-  background-color: var(--background-color2);
-  transition: left 0.3s ease;
-  /* overflow-y: scroll; */
-}
-.sidebar:target {
-  left: 0;
-}
-
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  align-items: center;
-  justify-content: center;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  height: 100%;
-  background-color: rgba(5, 4, 4, 0.5);
-}
-
-#sidebar:target + .overlay {
-  display: flex;
-}
-
 .main {
   flex: 1;
   margin-left: 250px;
@@ -59,313 +25,14 @@ body {
   overflow-y: auto;
   flex-direction: column;
 }
-.sidebar-toggler {
-  display: none;
-}
-@media (max-width: 1200px) {
-  .sidebar {
-    left: -250px;
-  }
-  .header-title {
-    display: none;
-  }
-  .main {
-    width: 100%;
-    margin-left: 0;
-  }
-  .sidebar-toggler {
-    display: block;
-  }
-}
-
-.sidebar .navs {
+.main .main-content {
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-
-  height: 100%;
-  margin: 20px 0;
-}
-
-.navs .top-menu {
-  display: flex;
-  flex-direction: column;
-  height: 410px;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.navs .top-menu .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 3px;
-  flex: 0 0 auto;
-}
-
-.navs .logo img {
-  width: 36px;
-  height: 20px;
-}
-
-.top-navs {
-  display: flex;
-  flex-direction: column;
-  height: 306px;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.navs .nav {
-  display: flex;
-  width: 100%;
-  height: 50px;
-cursor: pointer;
-  width: 197px;
-  align-items: center;
-  gap: 20px;
-  padding: 0px 0px 0px 12px;
-  /* padding-block-start: 12px; */
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.nav:hover {
-  background-color: var(--main-100);
-  border-radius: 10px;
-  color: var(--text-100);
-  box-shadow: 4px 4px 32px #6659ff12;
-}
-
-.nav.active {
-  height: 50px;
-  background-color: var(--main-100);
-  border-radius: 10px;
-  box-shadow: 4px 4px 32px #6659ff12;
-}
-
-.nav.active .label {
-  width: fit-content;
-  font-family: "Poppins-SemiBold", Helvetica;
-  font-weight: 600;
-  color: var(--text-100);
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.nav .icon {
-  width: 24px;
-  height: 24px;
-}
-
-.navs .bottom-navs {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin-bottom: 50px;
-  /* margin-top: 20px; */
-}
-
-/* end sidebar  */
-
-/* Start header */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 20px;
-  background-color: transparent;
-}
-
-
-
-
-
-.search-bar {
-  position: relative;
-  width: 450px;
-  height: 44px;
-  background-color: var(--background-color2);
-  border-radius: 8px;
-  /* display: inline-block; */
-}
-
-@media (max-width: 1200px) {
-  .header .search-bar {
-    display: none;
-  }
-}
-
-
-.search-bar .icon {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 10px;
-  left: 450px;
-}
-
-.search-bar .text-input {
-  padding: 10px 10px 18px 35px; 
-  border-radius: 5px;
-  background-color: var(--background-color2);
-  color: white;
-  width: 100%; 
-  border: none;
-}
-
-.search-bar .text-input::placeholder {
-  color: white; 
-}
-
-.header .user-setting {
-  display: inline-flex;
-  align-items: flex-start;
   gap: 30px;
-  position: relative;
-  flex: 0 0 auto;
+  overflow: hidden;
 }
-
-.user-setting .notifcations {
-  width: 44px;
-  height: 44px;
-  background-color: var(--background-color2);
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media (max-width: 600px) {
-  .user-setting .notifcations {
-    display: none;
-  }
-}
-.notifcations .icon {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  background-image: url(./img/notification.png);
-  background-size: 100% 100%;
-}
-
-.user-setting .profile {
-  display: inline-flex;
-  align-items: center;
-  gap: 15px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.profile .photo {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  background-color: var(--text-10);
-  border-radius: 10px;
-}
-
-.profile .name {
-  font-size: 14px;
-  letter-spacing: 0;
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins-Medium", Helvetica;
-  font-weight: 500;
-  color: var(--text-100);
-  line-height: normal;
-}
-
-/* end header  */
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 30px 30px;
-  position: relative;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-}
-
-/* statrt conin-card */
-.cards .coin-card {
-  padding: 23px 18px;
-  background-color: var(--background-color2);
-  border-radius: 15px;
-  box-shadow: 4px 4px 33px #0000000d;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.coin-card .head {
-  display: inline-flex;
-  align-items: center;
-  gap: 84px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.coin-card .bottom {
-  display: inline-flex;
-  align-items: center;
-  gap: 25px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.coin-card .bottom .text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  flex: auto;
-}
-
-.coin-card .amount {
-  position: relative;
-  width: 85px;
-  margin-top: -1px;
-  font-family: "Poppins-SemiBold", Helvetica;
-  font-weight: 600;
-  color: var(--text-100);
-  font-size: 21px;
-  letter-spacing: 0.42px;
-  line-height: normal;
-}
-
-.coin-card .bottom .graph {
-  position: relative;
-  width: 111px;
-  height: 46.5px;
-}
-
-.coin-card .graph .ellipse {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 14px;
-  left: 102px;
-  background-color: var(--main-100);
-  border-radius: 5px;
-  filter: blur(5px);
-}
-
-.coin-card .graph .vector {
-  position: absolute;
-  width: 109px;
-  height: 50px;
-  top: 0;
-  left: 0;
-}
-/* end coin-card  */
 
 .main .main-content .bottom-content {
   display: flex;
@@ -381,7 +48,6 @@ cursor: pointer;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  /* overflow: scroll; */
   align-items: center;
   justify-content: center;
 }
@@ -390,213 +56,6 @@ cursor: pointer;
     flex-direction: row;
   }
 }
-/* start master card  */
-.card-with-porftolio .master-card {
-  display: flex;
-  flex-direction: column;
-  width: 355px;
-  height: 180px;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  padding: 12px;
-  /* position: relative; */
-  background-color: #396ef7;
-  border-radius: 15px;
-}
-
-.master-card .head {
-  display: flex;
-  width: 315px;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 15px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.master-card .head .chip {
-  position: relative;
-  width: 37px;
-  height: 24px;
-}
-
-.head .chip .credit-icon {
-  position: relative;
-  width: 39px;
-  height: 26px;
-  top: -1px;
-  left: -1px;
-  border-radius: 5px;
-  border: 0.5px solid;
-  border-color: #a07300;
-  background: linear-gradient(
-    180deg,
-    rgb(217.81, 169.89, 0) 0%,
-    rgb(255, 248.75, 207.19) 51.04%,
-    rgb(240.12, 201.71, 0) 100%
-  );
-}
-
-.credit-icon .rectangle {
-  position: absolute;
-  width: 26px;
-  height: 17px;
-  top: 4px;
-  left: 6px;
-  border-radius: 50px;
-  border: 0.5px solid;
-  border-color: #a07300;
-  transform: rotate(90deg);
-}
-
-.credit-icon .group {
-  left: 27px;
-  position: absolute;
-  width: 11px;
-  height: 9px;
-  top: 8px;
-}
-
-.credit-icon .line {
-  position: absolute;
-  width: 11px;
-  height: 1px;
-  top: 0;
-  left: 0;
-}
-
-.credit-icon .line-2 {
-  position: absolute;
-  width: 11px;
-  height: 1px;
-  top: 9px;
-  left: 0;
-}
-
-.credit-icon .group-2 {
-  left: 0;
-  position: absolute;
-  width: 11px;
-  height: 9px;
-  top: 8px;
-}
-
-.master-card .middle {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.master-card .middle .amount {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins-SemiBold", Helvetica;
-  font-weight: 600;
-  color: var(--themelight);
-  font-size: 18px;
-  letter-spacing: 2.7px;
-  line-height: normal;
-}
-
-.master-card .bottom {
-  display: flex;
-  width: 315px;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 15px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.master-card .bottom .darrell-steward {
-  opacity: 0.6;
-  font-size: 12px;
-  letter-spacing: 1.2px;
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins-Medium", Helvetica;
-  font-weight: 500;
-  color: var(--text-100);
-  line-height: normal;
-}
-
-/* end master card  */
-
-/* start .my-portfolio  */
-/* .card-with-porftolio */
-.my-portfolio {
-  position: relative;
-  width: 360px;
-  height: 434px;
-  background-color: var(--background-color2);
-  border-radius: 15px;
-  box-shadow: 4px 4px 33px #0000000d;
-}
-
-.my-portfolio > .title {
-  position: absolute;
-  top: 29px;
-  left: 30px;
-  font-family: "Poppins-SemiBold", Helvetica;
-  font-weight: 600;
-  color: var(--stroke);
-  font-size: 21px;
-  letter-spacing: 0.63px;
-  line-height: normal;
-}
-
-.my-portfolio .rows {
-  flex-direction: column;
-  gap: 24px;
-  padding: 8px;
-  position: absolute;
-  top: 78px;
-  left: 23px;
-  display: inline-flex;
-  align-items: flex-start;
-}
-
-.my-portfolio .rows .row {
-  gap: 96px;
-  position: relative;
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: flex-start;
-}
-
-.rows .row > .text {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 5px;
-  position: relative;
-  flex: 0 0 auto;
-}
-.rows .row > .text .low{
-  color: var(--secondary-100);
-
-}
-.rows .row > .text .text-2 {
-  position: relative;
-  width: 84px;
-  height: 15px;
-  font-family: "Poppins-SemiBold", Helvetica;
-  font-weight: 600;
-  color: var(--text-100);
-  font-size: 14px;
-  text-align: right;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-/* end my .profile */
-
 .chart-with-market {
   display: inline-flex;
   flex-direction: column;
@@ -606,341 +65,37 @@ cursor: pointer;
   overflow-x: scroll;
 }
 
-/* start chart  */
-.chart-with-market .chart {
-  position: relative;
-  width: 739px;
-  height: 441px;
-  background-color: var(--background-color2);
-  border-radius: 15px;
-  box-shadow: 4px 4px 33px #0000000d;
+
+/* responsive media quieries */
+@media (max-width: 1200px) {
+  .sidebar {
+    left: -250px;
+  }
+  .header-title {
+    display: none;
+  }
+  .main {
+    width: 100%;
+    margin-left: 0;
+  }
+  .sidebar-toggler {
+    display: block;
+  }
+  .header .search-bar {
+    display: none;
+  }
 }
 
-.chart .overlap {
-  position: absolute;
-  width: 686px;
-  height: 251px;
-  top: 162px;
-  left: 30px;
+@media (max-width: 600px) {
+  .user-setting .notifcations {
+    display: none;
+  }
 }
 
-.overlap .chart-2 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 13px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
-.chart-2 .vertical {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  position: relative;
-  flex: 0 0 auto;
-}
 
-.chart-2 .vertical .amount-3 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 33px;
-  position: relative;
-  flex: 0 0 auto;
-}
 
-.vertical .amount-3 .amount-4 {
-  position: relative;
-  width: 46px;
-  margin-top: -1px;
-  font-family: "Poppins-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--text-10);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-}
 
-.vertical .amount-3 .amount-5 {
-  position: relative;
-  width: 46px;
-  font-family: "Poppins-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--text-10);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.chart-2 .vertical .graphs {
-  position: relative;
-  width: 625px;
-  height: 203.41px;
-  margin-right: -1px;
-}
-
-.overlap .chart-2 .months {
-  display: flex;
-  width: 628px;
-  align-items: center;
-  justify-content: center;
-  gap: 88px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.chart-2 .months .text-3 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--text-10);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 16px;
-  white-space: nowrap;
-}
-
-.chart .overlap .bars-with-line {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1px;
-  position: absolute;
-  top: 181px;
-  left: 58px;
-}
-
-.chart .row-2 {
-  display: inline-flex;
-  align-items: center;
-  gap: 326px;
-  position: absolute;
-  top: 86px;
-  left: 30px;
-}
-
-.row-2 .note {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.row-2 .pagination {
-  display: flex;
-  width: 250px;
-  align-items: flex-start;
-  justify-content: space-between;
-  position: relative;
-}
-
-.panigation .panigation {
-  background-color: var(--mainlinear);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  padding: 0px 15px;
-  position: relative;
-  flex: 0 0 auto;
-  border-radius: 15px;
-}
-
-.pagination .div-wrapper {
-  border: 1px solid;
-  border-color: var(--background-color1);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  padding: 0px 15px;
-  position: relative;
-  flex: 0 0 auto;
-  border-radius: 15px;
-}
-
-.chart-with-market .chart .title-3 {
-  display: flex;
-  width: 675px;
-  align-items: flex-start;
-  justify-content: space-between;
-  position: absolute;
-  top: 30px;
-  left: 30px;
-}
-
-/* .chart .title-3  */
-.heading {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins-SemiBold", Helvetica;
-  font-weight: 600;
-  color: var(--text-100);
-  font-size: 21px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.chart .title-3 .icons {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 15px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.title-3 .icons .button {
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.title-3 .icons .button-2 {
-  all: unset;
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid;
-  border-color: var(--background-color1);
-  position: relative;
-  flex: 0 0 auto;
-}
-/* end chart  */
-
-/* start live market  */
-.live-market {
-  position: relative;
-  width: 738px;
-  height: 173px;
-  background-color: var(--background-color2);
-  border-radius: 15px;
-}
-
-.live-market .frame {
-  display: flex;
-  width: 684px;
-  align-items: flex-start;
-  justify-content: space-between;
-  position: absolute;
-  top: 30px;
-  left: 30px;
-}
-
-.frame .button-3 {
-  all: unset;
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid;
-  border-color: var(--background-color1);
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.live-market .full-table {
-  display: inline-flex;
-  align-items: flex-end;
-  gap: 134px;
-  position: absolute;
-  top: 82px;
-  left: 30px;
-}
-
-.full-table .table {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 25px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.full-table .table .coin {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.table .coin .text-4 {
-  position: relative;
-  width: 58px;
-  margin-top: -1px;
-  font-family: "Poppins-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--text-10);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.coin .div-3 .icon {
-  position: relative;
-  width: 32px;
-  height: 32px;
-}
-
-.coin .div-3 .date {
-  width: 104px;
-  color: var(--text-100);
-  letter-spacing: 0.28px;
-  line-height: normal;
-  position: relative;
-  opacity: 0.8;
-  font-family: "Poppins-Medium", Helvetica;
-  font-weight: 500;
-  font-size: 14px;
-}
-.table .data {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.table .data .text-5 {
-  position: relative;
-  width: 70px;
-  margin-top: -1px;
-  font-family: "Poppins-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--text-10);
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.table .data .date-2 {
-  width: fit-content;
-  color: var(--secondary-100);
-  letter-spacing: 0;
-  line-height: 24px;
-  white-space: nowrap;
-  position: relative;
-  opacity: 0.8;
-  font-family: "Poppins-Medium", Helvetica;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-/* end .live-market */
 
 /* global styling */
 .text-wrapper {
@@ -1102,6 +257,7 @@ cursor: pointer;
   letter-spacing: 0;
 }
 
+/* start coin logo  */
 .card-logo {
   display: flex;
   width: 119px;
@@ -1158,6 +314,7 @@ cursor: pointer;
   letter-spacing: 0;
   line-height: normal;
 }
+/* end coin logo  */
 
 .small-icon {
   position: relative;
@@ -1165,7 +322,6 @@ cursor: pointer;
   height: 18px;
 }
 
-/* .row-2 .note */
 .div-3 {
   display: inline-flex;
   align-items: center;
